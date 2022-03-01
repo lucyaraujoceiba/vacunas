@@ -1,0 +1,1 @@
+insert into vacuna (nombre, estado,fecha_aplicacion, subsidiada, valor, dosis, id_usuario, dosis_pendiente, tiempo_entre_dosis) values (:nombre, :estado, :fechaAplicacion,:subsidiada, :valor, :dosis, :idUsuario, :dosisPendiente, :tiempoEntreDosis)

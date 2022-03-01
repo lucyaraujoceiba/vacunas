@@ -1,0 +1,1 @@
+insert into usuario(id, nombre,clave,fecha_creacion,numeroIdentificacion,tipoIdentificacion,fechaNacimiento) values(1,'test','1234',now(),'1234','cc','19-05-1991')
