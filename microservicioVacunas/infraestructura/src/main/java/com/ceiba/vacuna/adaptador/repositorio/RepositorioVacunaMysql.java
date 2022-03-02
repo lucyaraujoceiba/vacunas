@@ -45,9 +45,11 @@ public class RepositorioVacunaMysql implements RepositorioVacuna {
     }
 
     @Override
-    public boolean existe(String nombre) {
+    public boolean existe(String nombre, Long idUsuario, Long dosis) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("nombre", nombre);
+        paramSource.addValue("id_usuario", idUsuario);
+        paramSource.addValue("dosis", dosis);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
     }

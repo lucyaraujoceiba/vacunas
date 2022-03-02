@@ -28,15 +28,28 @@ class ConsultaControladorVacunaTest {
     private MockMvc mocMvc;
 
     @Test
-    @DisplayName("Deberia listar vacunas")
-    void deberiaListarUsuarios() throws Exception {
+    @DisplayName("Deberia listar vacunas en estado pendiente")
+    void deberiaListarVacunasdeUnUsuario() throws Exception {
         // arrange
         Long id = 1L;
         // act - assert
-        mocMvc.perform(get("/vacunas/{id}",id)
+        mocMvc.perform(get("/vacunas/pendientes/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.listaVacunas[0].id").value(2));
+
+    }
+
+    @Test
+    @DisplayName("Deberia listar vacunas en estado aplicada")
+    void deberiaListarVacunasAplicadasPorUsuarios() throws Exception {
+        // arrange
+        Long id = 1L;
+        // act - assert
+        mocMvc.perform(get("/vacunas/aplicadas/{id}",id)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].id").value(1));
 
     }
 

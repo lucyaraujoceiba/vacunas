@@ -31,8 +31,10 @@ public class DaoVacunaMysql implements DaoVacuna {
     }
 
     @Override
-    public List<DtoVacuna> listar() {
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoVacuna());
+    public List<DtoVacuna> listar(Long idUsuario) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("idUsuario", idUsuario);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, paramSource, new MapeoVacuna());
     }
 
     @Override

@@ -27,16 +27,16 @@ public class ConsultaControladorVacuna {
         this.manejadorListarVacunasporUsuario = manejadorListarVacunasporUsuario;
     }
 
-    @GetMapping(value="/{idUsuario}")
+    @GetMapping(value="/pendientes/{idUsuario}")
     @ApiOperation("Listar Vacunas")
     public DtoListaVacunas listarPorUsuario(@PathVariable Long idUsuario) {
 
         return this.manejadorListarVacunasporUsuario.ejecutar(idUsuario);
     }
-    @GetMapping
+    @GetMapping(value="/aplicadas/{idUsuario}")
     @ApiOperation("Listar Vacunas")
-    public List<DtoVacuna> listar() {
-        return this.manejadorListarVacunas.ejecutar();
+    public List<DtoVacuna> listar(@PathVariable Long idUsuario) {
+        return this.manejadorListarVacunas.ejecutar(idUsuario);
     }
 
 }

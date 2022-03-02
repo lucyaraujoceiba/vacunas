@@ -7,5 +7,5 @@ set nombre = :nombre,
     dosis = :dosis,
     id_usuario = :idUsuario,
     dosis_pendiente = :dosisPendiente,
-    tiempo_entre_dosis = :tiempoEntreDosis,
+    tiempo_entre_dosis = :tiempoEntreDosis
 where id = :id

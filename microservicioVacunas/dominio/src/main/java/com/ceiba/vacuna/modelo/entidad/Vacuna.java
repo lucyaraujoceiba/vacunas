@@ -1,11 +1,13 @@
 package com.ceiba.vacuna.modelo.entidad;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 
+@Setter
 @Getter
 public class Vacuna {
     private static final String SE_DEBE_INGRESAR_LA_FECHA_APLICACION = "Se debe ingresar la fecha de aplicacion";

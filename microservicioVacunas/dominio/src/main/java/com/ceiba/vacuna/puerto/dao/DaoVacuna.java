@@ -11,7 +11,7 @@ public interface DaoVacuna {
      * Permite listar vacunas
      * @return las vacunas
      */
-    List<DtoVacuna> listar();
+    List<DtoVacuna> listar(Long idUsuario);
 
     List<DtoVacuna> listarPorUsuario(Long idUsuario);
 

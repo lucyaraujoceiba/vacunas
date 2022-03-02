@@ -16,6 +16,6 @@ public class ManejadorListarVacunas {
         this.daoVacuna = daoVacuna;
     }
 
-    public List<DtoVacuna> ejecutar(){ return this.daoVacuna.listar(); }
+    public List<DtoVacuna> ejecutar(Long idUsuario){ return this.daoVacuna.listar(idUsuario); }
 
 }

@@ -29,7 +29,7 @@ public class ServicioCrearVacunaTest {
         // arrange
         Vacuna vacuna = new VacunaTestDataBuilder().build();
         RepositorioVacuna repositorioVacuna = Mockito.mock(RepositorioVacuna.class);
-        Mockito.when(repositorioVacuna.existe(Mockito.anyString())).thenReturn(false);
+        Mockito.when(repositorioVacuna.existe(vacuna.getNombre(), vacuna.getIdUsuario(), vacuna.getDosis())).thenReturn(false);
         Mockito.when(repositorioVacuna.crear(vacuna)).thenReturn(10L);
         ServicioCrearVacuna servicioCrearVacuna = new ServicioCrearVacuna(repositorioVacuna);
         // act
