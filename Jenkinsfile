@@ -41,23 +41,22 @@ pipeline {
 		sh 'chmod +x ./microservicioVacunas/gradlew'
 		sh './microservicioVacunas/gradlew --b ./microservicioVacunas/build.gradle clean'
 		sh './microservicioVacunas/gradlew --b ./microservicioVacunas/build.gradle test'
-
       }
-    }
-
+	}
+	  
     stage('Static Code Analysis') {
       steps{
         echo '------------>Análisis de código estático<------------'
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:misvacunas-lucy.araujo', 
+		sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:misvacunas-lucy.araujo', 
         sonarName:'''"CeibaADN-MisVacunas(lucy.araujo)"''', 
         sonarPathProperties:'./sonar-project.properties')
-
       }
     }
 
     stage('Build') {
       steps {
         echo "------------>Build<------------"
+		// Construir sin test
 		sh './microservicioVacunas/gradlew --b ./microservicioVacunas/build.gradle build -x test'
       }
     }  
@@ -69,7 +68,7 @@ pipeline {
     }
     success {
       echo 'This will run only if successful'
-	  junit 'build/test-results/test/*.xml'
+	  junit '**/test-results/test/*.xml'  //RUTA DE LOS ARCHIVOS .XML
     }
     failure {
       echo 'This will run only if failed'
