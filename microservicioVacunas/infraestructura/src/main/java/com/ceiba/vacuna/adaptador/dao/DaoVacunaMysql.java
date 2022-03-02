@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.vacuna.modelo.dto.DtoListaVacunas;
 import com.ceiba.vacuna.puerto.dao.DaoVacuna;
 
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

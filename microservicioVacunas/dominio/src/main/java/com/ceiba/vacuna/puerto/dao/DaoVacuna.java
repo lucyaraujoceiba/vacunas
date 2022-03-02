@@ -1,7 +1,5 @@
 package com.ceiba.vacuna.puerto.dao;
 
-
-import com.ceiba.vacuna.modelo.dto.DtoListaVacunas;
 import com.ceiba.vacuna.modelo.dto.DtoVacuna;
 
 import java.util.List;

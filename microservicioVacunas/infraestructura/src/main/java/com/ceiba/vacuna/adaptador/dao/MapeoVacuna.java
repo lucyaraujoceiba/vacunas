@@ -21,8 +21,8 @@ public class MapeoVacuna implements RowMapper<DtoVacuna>, MapperResult {
         Long valor = resultSet.getLong("valor");
         Long dosis = resultSet.getLong("dosis");
         Long idUsuario = resultSet.getLong("id_usuario");
-        String dosisPendiente = resultSet.getString("dosis_pendiente");;
-        Long tiempoEntreDosis = resultSet.getLong("tiempo_entre_dosis");;
+        String dosisPendiente = resultSet.getString("dosis_pendiente");
+        Long tiempoEntreDosis = resultSet.getLong("tiempo_entre_dosis");
         return new DtoVacuna(id,nombre,estado,fechaAplicacion, subsidiada, valor, dosis, idUsuario,dosisPendiente,tiempoEntreDosis);
     }
 
