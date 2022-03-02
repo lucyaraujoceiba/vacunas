@@ -30,8 +30,8 @@ public class ComandoVacunaTestDataBuilder {
         tiempoEntreDosis = 1L;
     }
 
-    public ComandoVacunaTestDataBuilder conNombre(String nombre) {
-        this.nombre = nombre;
+    public ComandoVacunaTestDataBuilder conEstado(String estado) {
+        this.estado = estado;
         return this;
     }
 

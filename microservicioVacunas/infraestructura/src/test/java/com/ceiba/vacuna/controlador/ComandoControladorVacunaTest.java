@@ -45,6 +45,19 @@ class ComandoControladorVacunaTest {
     }
 
     @Test
+    @DisplayName("Deberia crear una vacuna con estado pendiente")
+    void deberiaCrearUnaVacunaEnEstadoPendiente() throws Exception{
+        // arrange
+        ComandoVacuna vacuna = new ComandoVacunaTestDataBuilder().conEstado("pendiente").build();
+        // act - assert
+        mocMvc.perform(post("/vacunas")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(vacuna)))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'valor': 3}"));
+    }
+
+    @Test
     @DisplayName("Deberia actualizar una vacuna")
     void deberiaActualizarUnaVacuna() throws Exception{
         // arrange
