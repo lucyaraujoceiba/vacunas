@@ -15,7 +15,7 @@ import com.ceiba.vacuna.modelo.dto.DtoVacuna;
 public class DaoVacunaMysql implements DaoVacuna {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-    private final String    ID_USUARIO = "idUsuario";
+    private static final String ID_USUARIO = "idUsuario";
 
     @SqlStatement(namespace="vacuna", value="listarAplicadas")
     private static String sqlListarAplicadas;
