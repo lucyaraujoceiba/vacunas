@@ -49,7 +49,7 @@ pipeline {
       steps{
         echo '------------>Análisis de código estático<------------'
         sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:misvacunas-lucy.araujo', 
-        sonarName:'CeibaADN-MisVacunas(lucy.araujo)', 
+        sonarName:'''"CeibaADN-MisVacunas(lucy.araujo)"''', 
         sonarPathProperties:'./sonar-project.properties')
 
       }

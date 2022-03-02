@@ -58,7 +58,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-		sh './gradlew --b ./build.gradle build -x test'
+		sh './microservicioVacunas/gradlew --b ./microservicioVacunas/build.gradle build -x test'
       }
     }  
   }
