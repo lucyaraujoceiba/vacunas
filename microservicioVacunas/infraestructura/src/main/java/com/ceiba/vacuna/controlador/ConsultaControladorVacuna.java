@@ -35,8 +35,14 @@ public class ConsultaControladorVacuna {
     }
     @GetMapping(value="/aplicadas/{idUsuario}")
     @ApiOperation("Listar Vacunas")
-    public List<DtoVacuna> listar(@PathVariable Long idUsuario) {
+    public List<DtoVacuna> listarVacunasAplicadas(@PathVariable Long idUsuario) {
         return this.manejadorListarVacunas.ejecutar(idUsuario);
+    }
+
+    @GetMapping
+    @ApiOperation("Listar Vacunas")
+    public List<DtoVacuna> listarVacunas() {
+        return this.manejadorListarVacunas.litarTodas();
     }
 
 }

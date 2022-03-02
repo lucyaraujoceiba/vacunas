@@ -63,5 +63,29 @@ public class VacunaTest {
                 ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de aplicacion");
     }
 
+    @Test
+    void deberiaFallarSinIdUsuario() {
+
+        //Arrange
+        VacunaTestDataBuilder vacunaTestDataBuilder = new VacunaTestDataBuilder().conIdUsuario(null).conId(1L);
+        //act-assert
+        BasePrueba.assertThrows(() -> {
+                    vacunaTestDataBuilder.build();
+                },
+                ExcepcionValorObligatorio.class, "Se debe ingresar el identificador del usuario");
+    }
+
+    @Test
+    void deberiaFallarSinTiempoEntreDosis() {
+
+        //Arrange
+        VacunaTestDataBuilder vacunaTestDataBuilder = new VacunaTestDataBuilder().conTiempoEntreDosis(null).conId(1L);
+        //act-assert
+        BasePrueba.assertThrows(() -> {
+                    vacunaTestDataBuilder.build();
+                },
+                ExcepcionValorObligatorio.class, "Se debe ingresar el tiempo entre dosis");
+    }
+
 
 }

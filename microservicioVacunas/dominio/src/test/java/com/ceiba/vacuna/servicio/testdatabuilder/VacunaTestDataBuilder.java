@@ -25,6 +25,9 @@ public class VacunaTestDataBuilder {
         valor = 0L;
         dosis = 1L;
         idUsuario = 1L;
+        dosisPendiente = "S";
+        tiempoEntreDosis = 1L;
+        idUsuario = 1L;
     }
 
     public VacunaTestDataBuilder conEstado(String estado) {
@@ -44,6 +47,15 @@ public class VacunaTestDataBuilder {
 
     public VacunaTestDataBuilder conNombre(String nombreVacuna) {
         this.nombreVacuna = nombreVacuna;
+        return this;
+    }
+
+    public VacunaTestDataBuilder conIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+        return this;
+    }
+    public VacunaTestDataBuilder conTiempoEntreDosis(Long tiempoEntreDosis) {
+        this.tiempoEntreDosis = tiempoEntreDosis;
         return this;
     }
 

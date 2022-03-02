@@ -14,6 +14,8 @@ public class Vacuna {
     private static final String SE_DEBE_INGRESAR_EL_ESTADO = "Se debe ingresar el estado";
     private static final String SE_DEBE_INGRESAR_EL_NOMBRE_DE_VACUNA = "Se debe ingresar el nombre de la vacuna";
     private static final String SE_DEBE_INGRESAR_EL_VALOR_DE_VACUNA = "Se debe ingresar el valor de la vacuna";
+    private static final String SE_DEBE_INGRESAR_EL_ID_USUARIO = "Se debe ingresar el identificador del usuario";
+    private static final String SE_DEBE_INGRESAR_EL_TIEMPO_ENTRE_DOSIS = "Se debe ingresar el tiempo entre dosis";
 
 
     private Long id;
@@ -33,6 +35,8 @@ public class Vacuna {
         validarObligatorio(estado, SE_DEBE_INGRESAR_EL_ESTADO);
         validarObligatorio(fechaAplicacion, SE_DEBE_INGRESAR_LA_FECHA_APLICACION);
         validarObligatorio(valor, SE_DEBE_INGRESAR_EL_VALOR_DE_VACUNA);
+        validarObligatorio(idUsuario,SE_DEBE_INGRESAR_EL_ID_USUARIO);
+        validarObligatorio(tiempoEntreDosis,SE_DEBE_INGRESAR_EL_TIEMPO_ENTRE_DOSIS);
 
         this.id = id;
         this.nombre = nombre;

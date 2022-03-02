@@ -23,7 +23,7 @@ public interface RepositorioVacuna {
     void eliminar(Long idVacuna);
 
     /**
-     * Permite validar si existe un usuario con un nombre
+     * Permite validar si existe una vacuna con un nombre
      * @param nombre
      * @return si existe o no
      */
