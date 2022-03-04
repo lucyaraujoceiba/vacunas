@@ -8,7 +8,7 @@ public class UsuarioTestDataBuilder {
 
     private Long id;
     private String nombreUsuario;
-    private String clave;
+    private String tipoSangre;
     private LocalDateTime fecha;
     private String numeroIdentificacion;
     private String tipoIdentificacion;
@@ -16,15 +16,15 @@ public class UsuarioTestDataBuilder {
 
     public UsuarioTestDataBuilder() {
         nombreUsuario = "1234";
-        clave = "1234";
+        tipoSangre = "o+";
         fecha = LocalDateTime.now();
         numeroIdentificacion = "1234";
         tipoIdentificacion = "cc";
         fechaNacimiento = "13-05-1991";
     }
 
-    public UsuarioTestDataBuilder conClave(String clave) {
-        this.clave = clave;
+    public UsuarioTestDataBuilder conTipoSangre(String tipoSangre) {
+        this.tipoSangre = tipoSangre;
         return this;
     }
 
@@ -44,6 +44,6 @@ public class UsuarioTestDataBuilder {
     }
 
     public Usuario build() {
-        return new Usuario(id,nombreUsuario, clave,fecha,numeroIdentificacion,tipoIdentificacion, fechaNacimiento);
+        return new Usuario(id,nombreUsuario, tipoSangre,fecha,numeroIdentificacion,tipoIdentificacion, fechaNacimiento);
     }
 }

@@ -6,16 +6,14 @@ import com.ceiba.vacuna.puerto.repositorio.RepositorioVacuna;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
-import java.util.Calendar;
 
 
-public class ServicioCrearVacuna {
-
+public class ServicioRegistrarVacunaUsuario {
     private static final String LA_VACUNA_YA_EXISTE_EN_EL_SISTEMA = "La vacuna ya existe en el sistema";
     private static final String PENDIENTE = "pendiente";
     private final RepositorioVacuna repositorioVacuna;
 
-    public ServicioCrearVacuna(RepositorioVacuna repositorioVacuna) {
+    public ServicioRegistrarVacunaUsuario(RepositorioVacuna repositorioVacuna) {
         this.repositorioVacuna = repositorioVacuna;
     }
 
@@ -24,6 +22,9 @@ public class ServicioCrearVacuna {
 
         if(vacuna.getEstado().equals(PENDIENTE)){
             vacuna.setFechaAplicacion(calcularfechaVacuna(vacuna.getTiempoEntreDosis()));
+        }
+        else{
+            vacuna.setFechaAplicacion(LocalDateTime.now());
         }
         return this.repositorioVacuna.crear(vacuna);
     }
@@ -36,11 +37,9 @@ public class ServicioCrearVacuna {
     }
 
     private LocalDateTime calcularfechaVacuna(Long tiempo){
-        LocalDateTime fechaVacuna;
-        LocalDateTime fechaActual = LocalDateTime.now();
-        fechaVacuna = fechaActual.plusMonths(tiempo);
+        LocalDateTime fechaVacuna = LocalDateTime.now().plusMonths(tiempo);
         if(fechaVacuna.getDayOfWeek() == DayOfWeek.SUNDAY){
-            fechaVacuna = fechaActual.plusDays(1);
+            fechaVacuna = fechaVacuna.plusDays(1);
         }
         return fechaVacuna;
     }

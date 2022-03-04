@@ -2,7 +2,7 @@ package com.ceiba.vacuna.comando.manejador;
 
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.vacuna.modelo.entidad.Vacuna;
-import com.ceiba.vacuna.servicio.ServicioActualizarVacuna;
+import com.ceiba.vacuna.servicio.ServicioActualizarEstadoVacuna;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.vacuna.comando.ComandoVacuna;
@@ -12,9 +12,9 @@ import com.ceiba.vacuna.comando.fabrica.FabricaVacuna;
 public class ManejadorActualizarVacuna implements ManejadorComando<ComandoVacuna> {
 
     private final FabricaVacuna fabricaVacuna;
-    private final ServicioActualizarVacuna servicioActualizarVacuna;
+    private final ServicioActualizarEstadoVacuna servicioActualizarVacuna;
 
-    public ManejadorActualizarVacuna(FabricaVacuna fabricaUsuario, ServicioActualizarVacuna servicioActualizarUsuario) {
+    public ManejadorActualizarVacuna(FabricaVacuna fabricaUsuario, ServicioActualizarEstadoVacuna servicioActualizarUsuario) {
         this.fabricaVacuna = fabricaUsuario;
         this.servicioActualizarVacuna = servicioActualizarUsuario;
     }

@@ -1,6 +1,6 @@
 update usuario
 set nombre = :nombre,
-	clave = :clave,
+	tipo_sangre = :tipoSangre,
 	fecha_creacion = :fechaCreacion,
 	numeroIdentificacion = :numeroIdentificacion,
     tipoIdentificacion = :tipoIdentificacion,

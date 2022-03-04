@@ -4,13 +4,13 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.vacuna.modelo.entidad.Vacuna;
 import com.ceiba.vacuna.puerto.repositorio.RepositorioVacuna;
 
-public class ServicioActualizarVacuna {
+public class ServicioActualizarEstadoVacuna {
 
     private static final String LA_VACUNA_NO_EXISTE_EN_EL_SISTEMA = "La vacuna no existe en el sistema";
 
     private final RepositorioVacuna repositorioVacuna;
 
-    public ServicioActualizarVacuna(RepositorioVacuna repositorioVacuna) {
+    public ServicioActualizarEstadoVacuna(RepositorioVacuna repositorioVacuna) {
         this.repositorioVacuna = repositorioVacuna;
     }
 

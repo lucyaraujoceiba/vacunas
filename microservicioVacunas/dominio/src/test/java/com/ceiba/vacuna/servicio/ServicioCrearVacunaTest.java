@@ -31,7 +31,7 @@ public class ServicioCrearVacunaTest {
         RepositorioVacuna repositorioVacuna = Mockito.mock(RepositorioVacuna.class);
         Mockito.when(repositorioVacuna.existe(vacuna.getNombre(), vacuna.getIdUsuario(), vacuna.getDosis())).thenReturn(false);
         Mockito.when(repositorioVacuna.crear(vacuna)).thenReturn(10L);
-        ServicioCrearVacuna servicioCrearVacuna = new ServicioCrearVacuna(repositorioVacuna);
+        ServicioRegistrarVacunaUsuario servicioCrearVacuna = new ServicioRegistrarVacunaUsuario(repositorioVacuna);
         // act
         Long idUsuario = servicioCrearVacuna.ejecutar(vacuna);
         //- assert

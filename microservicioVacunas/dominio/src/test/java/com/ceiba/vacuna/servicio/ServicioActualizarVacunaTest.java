@@ -18,7 +18,7 @@ public class ServicioActualizarVacunaTest {
         Vacuna vacuna = new VacunaTestDataBuilder().conId(1L).build();
         RepositorioVacuna repositorioVacuna = Mockito.mock(RepositorioVacuna.class);
         Mockito.when(repositorioVacuna.existePorId(Mockito.anyLong())).thenReturn(false);
-        ServicioActualizarVacuna servicioActualizarVacuna = new ServicioActualizarVacuna(repositorioVacuna);
+        ServicioActualizarEstadoVacuna servicioActualizarVacuna = new ServicioActualizarEstadoVacuna(repositorioVacuna);
         // act - assert
         BasePrueba.assertThrows(() -> servicioActualizarVacuna.ejecutar(vacuna), ExcepcionDuplicidad.class,"La vacuna no existe en el sistema");
     }
@@ -30,7 +30,7 @@ public class ServicioActualizarVacunaTest {
         Vacuna vacuna = new VacunaTestDataBuilder().conId(1L).build();
         RepositorioVacuna repositorioVacuna = Mockito.mock(RepositorioVacuna.class);
         Mockito.when(repositorioVacuna.existePorId(Mockito.anyLong())).thenReturn(true);
-        ServicioActualizarVacuna servicioActualizarVacuna = new ServicioActualizarVacuna(repositorioVacuna);
+        ServicioActualizarEstadoVacuna servicioActualizarVacuna = new ServicioActualizarEstadoVacuna(repositorioVacuna);
         // act
         servicioActualizarVacuna.ejecutar(vacuna);
         //assert

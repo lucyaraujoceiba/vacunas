@@ -9,7 +9,7 @@ public class ComandoUsuarioTestDataBuilder {
 
     private Long id;
     private String nombre;
-    private String clave;
+    private String tipoSangre;
     private LocalDateTime fecha;
     private String numeroIdentificacion;
     private String tipoIdentificacion;
@@ -17,7 +17,7 @@ public class ComandoUsuarioTestDataBuilder {
 
     public ComandoUsuarioTestDataBuilder() {
         nombre = UUID.randomUUID().toString();
-        clave = "1234";
+        tipoSangre = "0+";
         fecha = LocalDateTime.now();
         numeroIdentificacion = "1234";
         tipoIdentificacion = "cc";
@@ -30,6 +30,6 @@ public class ComandoUsuarioTestDataBuilder {
     }
 
     public ComandoUsuario build() {
-        return new ComandoUsuario(id,nombre, clave,fecha, numeroIdentificacion,tipoIdentificacion, fechaNacimiento);
+        return new ComandoUsuario(id,nombre, tipoSangre,fecha, numeroIdentificacion,tipoIdentificacion, fechaNacimiento);
     }
 }

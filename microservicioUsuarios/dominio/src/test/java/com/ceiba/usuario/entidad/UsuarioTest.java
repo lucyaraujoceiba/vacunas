@@ -24,7 +24,7 @@ public class UsuarioTest {
         //assert
         assertEquals(1, usuario.getId());
         assertEquals("1234", usuario.getNombre());
-        assertEquals("1234", usuario.getClave());
+        assertEquals("o+", usuario.getTipoSangre());
         assertEquals(fechaCreacion, usuario.getFechaCreacion());
     }
 
@@ -41,27 +41,15 @@ public class UsuarioTest {
     }
 
     @Test
-    void deberiaFallarSinClave() {
+    void deberiaFallarSinTipoSangre() {
 
         //Arrange
-        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conClave(null).conId(1L);
+        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conTipoSangre(null).conId(1L);
         //act-assert
         BasePrueba.assertThrows(() -> {
                     usuarioTestDataBuilder.build();
                 },
-                ExcepcionValorObligatorio.class, "Se debe ingresar la clave");
-    }
-
-    @Test
-    void deberiaFallarSinTamanioClave() {
-
-        //Arrange
-        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conClave("123").conId(1L);
-        //act-assert
-        BasePrueba.assertThrows(() -> {
-                    usuarioTestDataBuilder.build();
-                },
-                ExcepcionLongitudValor.class, "La clave debe tener una longitud mayor o igual a 4");
+                ExcepcionValorObligatorio.class, "Se debe ingresar el tipo de sangre");
     }
 
     @Test
