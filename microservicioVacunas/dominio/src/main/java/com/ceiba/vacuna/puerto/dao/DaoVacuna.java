@@ -25,10 +25,4 @@ public interface DaoVacuna {
      */
     List<DtoVacuna> listarPorUsuario(String tipoDocumento, String documento);
 
-    /**
-     * Permite consultar el valor a pagar en la siguiente cita de vacunas
-     * @param idUsuario
-     * @return
-     */
-    Long valorApagarPorusuario(Long idUsuario);
 }

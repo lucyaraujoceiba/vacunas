@@ -27,9 +27,6 @@ public class DaoVacunaMysql implements DaoVacuna {
     @SqlStatement(namespace="vacuna", value="listarPorUsuario")
     private static String sqlListarPorUsuario;
 
-    @SqlStatement(namespace="vacuna", value="valorPorUsuario")
-    private static String sqlValorPorUsuario;
-
     public DaoVacunaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -53,13 +50,6 @@ public class DaoVacunaMysql implements DaoVacuna {
         paramSource.addValue(TIPO_DOCUMENTO, tipoDocumento);
         paramSource.addValue(DOCUMENTO, documento);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorUsuario, paramSource, new MapeoVacuna());
-    }
-
-    @Override
-    public Long valorApagarPorusuario(Long idUsuario) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-      //  paramSource.addValue(ID_USUARIO, idUsuario);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlValorPorUsuario, paramSource, Long.class);
     }
 
 }

@@ -17,12 +17,6 @@ public interface RepositorioVacuna {
     void actualizar(Vacuna vacuna);
 
     /**
-     * Permite eliminar un vacuna
-     * @param idVacuna
-     */
-    void eliminar(Long idVacuna);
-
-    /**
      * Permite validar si existe una vacuna con un nombre
      * @param nombre
      * @return si existe o no

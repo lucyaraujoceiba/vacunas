@@ -3,7 +3,6 @@ package com.ceiba.vacuna.adaptador.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalDate;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.vacuna.modelo.dto.DtoVacuna;

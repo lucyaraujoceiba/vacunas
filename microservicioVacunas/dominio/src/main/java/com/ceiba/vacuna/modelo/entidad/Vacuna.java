@@ -10,7 +10,6 @@ import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 @Setter
 @Getter
 public class Vacuna {
-   // private static final String SE_DEBE_INGRESAR_LA_FECHA_APLICACION = "Se debe ingresar la fecha de aplicacion";
     private static final String SE_DEBE_INGRESAR_EL_ESTADO = "Se debe ingresar el estado";
     private static final String SE_DEBE_INGRESAR_EL_NOMBRE_DE_VACUNA = "Se debe ingresar el nombre de la vacuna";
     private static final String SE_DEBE_INGRESAR_EL_VALOR_DE_VACUNA = "Se debe ingresar el valor de la vacuna";
@@ -34,7 +33,6 @@ public class Vacuna {
                   String subsidiada, Long valor, Long dosis, Long idUsuario,String dosisPendiente,Long tiempoEntreDosis) {
         validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_VACUNA);
         validarObligatorio(estado, SE_DEBE_INGRESAR_EL_ESTADO);
-       // validarObligatorio(fechaAplicacion, SE_DEBE_INGRESAR_LA_FECHA_APLICACION);
         validarObligatorio(valor, SE_DEBE_INGRESAR_EL_VALOR_DE_VACUNA);
         validarObligatorio(idUsuario,SE_DEBE_INGRESAR_EL_ID_USUARIO);
         validarObligatorio(tiempoEntreDosis,SE_DEBE_INGRESAR_EL_TIEMPO_ENTRE_DOSIS);

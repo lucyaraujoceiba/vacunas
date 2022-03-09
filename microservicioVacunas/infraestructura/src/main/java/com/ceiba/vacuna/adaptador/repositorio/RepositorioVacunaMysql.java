@@ -37,14 +37,6 @@ public class RepositorioVacunaMysql implements RepositorioVacuna {
     }
 
     @Override
-    public void eliminar(Long id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", id);
-
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
-    }
-
-    @Override
     public boolean existe(String nombre, Long idUsuario, Long dosis) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("nombre", nombre);

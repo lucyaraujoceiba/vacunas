@@ -18,10 +18,9 @@ public class ManejadorListarVacunasPorUsuario {
     public DtoListaVacunas ejecutar(String tipoDocumento, String documento){
         Long valorTotal= 0L;
         List<DtoVacuna>  listaVacunas = this.daoVacuna.listarPorUsuario(tipoDocumento, documento);
-        //todo no hacer la otra consulta a base de datos y calcular el valor con la primera lista que obtuve
-      //  if(!listaVacunas.isEmpty() || listaVacunas.size() != 0) {
-        //     valorTotal = this.daoVacuna.valorApagarPorusuario(idUsuario);
-        //}
+        for (DtoVacuna dtoVacuna: listaVacunas) {
+            valorTotal = valorTotal + dtoVacuna.getValor();
+        }
         DtoListaVacunas dtoListaVacunas = new DtoListaVacunas(listaVacunas,valorTotal );
         return dtoListaVacunas;
     }
