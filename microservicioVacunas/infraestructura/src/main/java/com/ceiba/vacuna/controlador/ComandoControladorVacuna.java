@@ -4,7 +4,6 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.vacuna.comando.ComandoVacuna;
 import com.ceiba.vacuna.comando.manejador.ManejadorActualizarVacuna;
 import com.ceiba.vacuna.comando.manejador.ManejadorCrearVacuna;
-import com.ceiba.vacuna.comando.manejador.ManejadorEliminarVacuna;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,15 +16,13 @@ import io.swagger.annotations.ApiOperation;
 public class ComandoControladorVacuna {
 
     private final ManejadorCrearVacuna manejadorCrearVacuna;
-	private final ManejadorEliminarVacuna manejadorEliminarVacuna;
+
 	private final ManejadorActualizarVacuna manejadorActualizarVacuna;
 
     @Autowired
     public ComandoControladorVacuna(ManejadorCrearVacuna manejadorCrearVacuna,
-									ManejadorEliminarVacuna manejadorEliminarVacuna,
 									ManejadorActualizarVacuna manejadorActualizarVacuna) {
         this.manejadorCrearVacuna = manejadorCrearVacuna;
-		this.manejadorEliminarVacuna = manejadorEliminarVacuna;
 		this.manejadorActualizarVacuna = manejadorActualizarVacuna;
     }
 
@@ -34,12 +31,6 @@ public class ComandoControladorVacuna {
     public ComandoRespuesta<Long> crear(@RequestBody ComandoVacuna comandoVacuna) {
         return manejadorCrearVacuna.ejecutar(comandoVacuna);
     }
-
-    @DeleteMapping(value="/{id}")
-	@ApiOperation("Eliminar Vacuna")
-	public void eliminar(@PathVariable Long id) {
-		manejadorEliminarVacuna.ejecutar(id);
-	}
 
 	@PutMapping(value="/{id}")
 	@ApiOperation("Actualizar Vacuna")

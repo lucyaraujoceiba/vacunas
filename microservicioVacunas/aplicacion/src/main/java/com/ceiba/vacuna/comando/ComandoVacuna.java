@@ -1,6 +1,6 @@
 package com.ceiba.vacuna.comando;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +16,7 @@ public class ComandoVacuna {
     private Long id;
     private String nombre;
     private String estado;
-    private LocalDateTime fechaAplicacion;
+    private LocalDate fechaAplicacion;
     private String subsidiada;
     private Long valor;
     private Long dosis;

@@ -2,7 +2,8 @@ package com.ceiba.vacuna.adaptador.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalDate;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.vacuna.modelo.dto.DtoVacuna;
@@ -16,7 +17,7 @@ public class MapeoVacuna implements RowMapper<DtoVacuna>, MapperResult {
         Long id = resultSet.getLong("id");
         String nombre = resultSet.getString("nombre");
         String estado = resultSet.getString("estado");
-        LocalDateTime fechaAplicacion = extraerLocalDateTime(resultSet, "fecha_aplicacion");
+        LocalDate fechaAplicacion = extraerLocalDate(resultSet, "fecha_aplicacion");
         String subsidiada = resultSet.getString("subsidiada");
         Long valor = resultSet.getLong("valor");
         Long dosis = resultSet.getLong("dosis");

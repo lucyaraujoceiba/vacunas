@@ -3,7 +3,6 @@ package com.ceiba.configuracion;
 import com.ceiba.vacuna.puerto.repositorio.RepositorioVacuna;
 import com.ceiba.vacuna.servicio.ServicioActualizarEstadoVacuna;
 import com.ceiba.vacuna.servicio.ServicioRegistrarVacunaUsuario;
-import com.ceiba.vacuna.servicio.ServicioEliminarVacuna;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,11 +12,6 @@ public class BeanServicioVacuna {
     @Bean
     public ServicioRegistrarVacunaUsuario servicioCrearVacuna(RepositorioVacuna repositorioVacuna) {
         return new ServicioRegistrarVacunaUsuario(repositorioVacuna);
-    }
-
-    @Bean
-    public ServicioEliminarVacuna servicioEliminarVacuna(RepositorioVacuna repositorioVacuna) {
-        return new ServicioEliminarVacuna(repositorioVacuna);
     }
 
     @Bean

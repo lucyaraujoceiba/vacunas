@@ -2,14 +2,14 @@ package com.ceiba.vacuna.servicio.testdatabuilder;
 
 import com.ceiba.vacuna.modelo.entidad.Vacuna;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class VacunaTestDataBuilder {
 
     private Long id;
     private String nombreVacuna;
     private String estado;
-    private LocalDateTime fecha;
+    private LocalDate fecha;
     private String subsidiada;
     private Long valor;
     private Long idUsuario;
@@ -20,11 +20,10 @@ public class VacunaTestDataBuilder {
     public VacunaTestDataBuilder() {
         nombreVacuna = "tetano";
         estado = "aplicada";
-        fecha = LocalDateTime.now();
+        fecha = null;
         subsidiada = "si";
         valor = 0L;
         dosis = 1L;
-        idUsuario = 1L;
         dosisPendiente = "S";
         tiempoEntreDosis = 1L;
         idUsuario = 1L;
@@ -40,7 +39,7 @@ public class VacunaTestDataBuilder {
         return this;
     }
 
-    public VacunaTestDataBuilder conFechaAplicacion(LocalDateTime fechaAplicacion) {
+    public VacunaTestDataBuilder conFechaAplicacion(LocalDate fechaAplicacion) {
         this.fecha = fechaAplicacion;
         return this;
     }
@@ -56,6 +55,20 @@ public class VacunaTestDataBuilder {
     }
     public VacunaTestDataBuilder conTiempoEntreDosis(Long tiempoEntreDosis) {
         this.tiempoEntreDosis = tiempoEntreDosis;
+        return this;
+    }
+
+    public VacunaTestDataBuilder convalorVacuna(Long valor) {
+        this.valor = valor;
+        return this;
+    }
+
+    public VacunaTestDataBuilder conSubsidiada(String subsidiada) {
+        this.subsidiada = subsidiada;
+        return this;
+    }
+    public VacunaTestDataBuilder convaDosisPendiente(String dosis) {
+        this.dosisPendiente = dosis;
         return this;
     }
 

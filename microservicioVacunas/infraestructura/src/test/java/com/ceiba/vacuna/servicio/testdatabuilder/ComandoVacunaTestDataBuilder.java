@@ -2,7 +2,7 @@ package com.ceiba.vacuna.servicio.testdatabuilder;
 
 import com.ceiba.vacuna.comando.ComandoVacuna;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class ComandoVacunaTestDataBuilder {
@@ -10,7 +10,7 @@ public class ComandoVacunaTestDataBuilder {
     private Long idVacuna;
     private String nombre;
     private String estado;
-    private LocalDateTime fecha;
+    private LocalDate fecha;
     private String subsidiada;
     private Long valor;
     private Long dosis;
@@ -21,7 +21,7 @@ public class ComandoVacunaTestDataBuilder {
     public ComandoVacunaTestDataBuilder() {
         nombre = UUID.randomUUID().toString();
         estado = "aplicada";
-        fecha = LocalDateTime.now();
+        fecha = LocalDate.now();
         subsidiada = "si";
         valor = 0L;
         dosis = 1L;

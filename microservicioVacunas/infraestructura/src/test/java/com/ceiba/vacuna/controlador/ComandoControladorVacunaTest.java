@@ -70,21 +70,4 @@ class ComandoControladorVacunaTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    @DisplayName("Deberia eliminar una vacuna")
-    void deberiaEliminarUnaVacuna() throws Exception {
-        // arrange
-        Long id = 1L;
-        // act - assert
-        mocMvc.perform(delete("/vacunas/{id}",id)
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-
-        mocMvc.perform(get("/vacunas")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)));
-    }
-
 }
