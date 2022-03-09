@@ -15,7 +15,8 @@ import com.ceiba.vacuna.modelo.dto.DtoVacuna;
 public class DaoVacunaMysql implements DaoVacuna {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-    private static final String ID_USUARIO = "idUsuario";
+    private static final String TIPO_DOCUMENTO = "tipoDocumento";
+    private static final String DOCUMENTO = "documento";
 
     @SqlStatement(namespace="vacuna", value="listarAplicadas")
     private static String sqlListarAplicadas;
@@ -34,9 +35,10 @@ public class DaoVacunaMysql implements DaoVacuna {
     }
 
     @Override
-    public List<DtoVacuna> listarAplicadas(Long idUsuario) {
+    public List<DtoVacuna> listarAplicadas(String tipoDocumento, String documento) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue(ID_USUARIO, idUsuario);
+        paramSource.addValue(TIPO_DOCUMENTO, tipoDocumento);
+        paramSource.addValue(DOCUMENTO, documento);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarAplicadas, paramSource, new MapeoVacuna());
     }
 
@@ -46,16 +48,17 @@ public class DaoVacunaMysql implements DaoVacuna {
     }
 
     @Override
-    public List<DtoVacuna> listarPorUsuario(Long idUsuario) {
+    public List<DtoVacuna> listarPorUsuario(String tipoDocumento, String documento) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue(ID_USUARIO, idUsuario);
+        paramSource.addValue(TIPO_DOCUMENTO, tipoDocumento);
+        paramSource.addValue(DOCUMENTO, documento);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorUsuario, paramSource, new MapeoVacuna());
     }
 
     @Override
     public Long valorApagarPorusuario(Long idUsuario) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue(ID_USUARIO, idUsuario);
+      //  paramSource.addValue(ID_USUARIO, idUsuario);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlValorPorUsuario, paramSource, Long.class);
     }
 

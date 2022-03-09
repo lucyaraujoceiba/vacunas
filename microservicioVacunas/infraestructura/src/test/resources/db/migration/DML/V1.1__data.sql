@@ -1,2 +1,3 @@
 insert into vacuna(id, nombre,estado,fecha_aplicacion, subsidiada, valor, dosis, id_usuario,dosis_pendiente,tiempo_entre_dosis) values(1,'test','aplicada',now(), 'si', 0, 1,1,'S',2);
 insert into vacuna(id, nombre,estado,fecha_aplicacion, subsidiada, valor, dosis, id_usuario,dosis_pendiente,tiempo_entre_dosis) values(2,'tetano','pendiente',now(), 'si', 10000, 1,1,'S',1);
+insert into usuario(id, nombre,tipo_sangre,fecha_creacion,numeroIdentificacion,tipoIdentificacion,fechaNacimiento) values(1,'test','o+',now(),'1234','CC','19-05-1991')

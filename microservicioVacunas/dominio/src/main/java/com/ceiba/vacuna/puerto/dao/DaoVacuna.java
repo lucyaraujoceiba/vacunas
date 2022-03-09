@@ -9,7 +9,7 @@ public interface DaoVacuna {
      * Permite listar vacunas aplicadas de un usuario
      * @return las vacunas
      */
-    List<DtoVacuna> listarAplicadas(Long idUsuario);
+    List<DtoVacuna> listarAplicadas(String tipoDocumento, String documento);
 
     /**
      * Permite listar todas las vacunas
@@ -19,10 +19,11 @@ public interface DaoVacuna {
 
     /**
      * Permite listar vacunas pendientes
-     * @param idUsuario
+     * @param tipoDocumento
+     * @param documento
      * @return
      */
-    List<DtoVacuna> listarPorUsuario(Long idUsuario);
+    List<DtoVacuna> listarPorUsuario(String tipoDocumento, String documento);
 
     /**
      * Permite consultar el valor a pagar en la siguiente cita de vacunas
