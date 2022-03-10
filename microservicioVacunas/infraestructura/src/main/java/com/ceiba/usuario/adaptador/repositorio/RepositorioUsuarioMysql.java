@@ -15,17 +15,9 @@ public class RepositorioUsuarioMysql implements RepositorioUsuario {
     @SqlStatement(namespace="usuario", value="crear")
     private static String sqlCrear;
 
-    @SqlStatement(namespace="usuario", value="actualizar")
-    private static String sqlActualizar;
-
-    @SqlStatement(namespace="usuario", value="eliminar")
-    private static String sqlEliminar;
-
     @SqlStatement(namespace="usuario", value="existe")
     private static String sqlExiste;
 
-    @SqlStatement(namespace="usuario", value="existePorId")
-    private static String sqlExistePorId;
 
     public RepositorioUsuarioMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -42,13 +34,5 @@ public class RepositorioUsuarioMysql implements RepositorioUsuario {
         paramSource.addValue("tipoDoc", tipoIdentificacion);
         paramSource.addValue("documento", numeroIdentificacion);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
-    }
-
-    @Override
-    public boolean existePorId(Long id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", id);
-
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
     }
 }

@@ -18,9 +18,6 @@ public class RepositorioVacunaMysql implements RepositorioVacuna {
     @SqlStatement(namespace="vacuna", value="actualizar")
     private static String sqlActualizar;
 
-    @SqlStatement(namespace="vacuna", value="eliminar")
-    private static String sqlEliminar;
-
     @SqlStatement(namespace="vacuna", value="existe")
     private static String sqlExiste;
 

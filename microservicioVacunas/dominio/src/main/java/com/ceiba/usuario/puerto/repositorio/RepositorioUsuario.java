@@ -18,10 +18,4 @@ public interface RepositorioUsuario {
      */
     boolean existe(String tipoIdentificacion, String numeroIdentificacion);
 
-    /**
-     * Permite validar si existe un usuario con un nombre excluyendo un id
-     * @return si existe o no
-     */
-    boolean existePorId(Long id);
-
 }
